@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "admin-portal"
+  "defaultProject": "admin-portal",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
