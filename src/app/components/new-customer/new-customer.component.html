@@ -1,0 +1,36 @@
+<div class="main-container">
+  <form [formGroup]="addNewForm" (ngSubmit)="addNew()" class="flex-column">
+    <mat-form-field>
+      <input matInput placeholder="First Name" [formControl]="firstName" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" [formControl]="lastName" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="User Email" [formControl]="email" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Phone Number" [formControl]="phoneNumber" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Company Name" [formControl]="company" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Street No." [formControl]="street" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="City" [formControl]="city" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Province" [formControl]="province" required="required">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Country" [formControl]="country" required="required">
+    </mat-form-field>
+    <button mat-raised-button>Save New Customer</button>
+  </form>
+  <p>
+    new-customer works!
+  </p>
+</div>
+

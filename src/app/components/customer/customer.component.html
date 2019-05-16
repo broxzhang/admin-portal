@@ -1,0 +1,62 @@
+<div class="main-container">
+  <div class="customer-profile-container flex-column">
+    <div class="flex-row">
+      <div class="customer-picture-container">
+        <img src="{{customer.picture}}" alt="picture" class="profile-picture"/>
+      </div>
+      <div class="flex-column customer-info-container">
+        <div class="info-container flex-row">
+          <span class="info-title center">
+            <span class="center">First Name:</span>
+          </span>
+          <span class="info-data center">
+            <span class="center">{{customer.firstName}}</span>
+          </span>
+        </div>
+        <div class="info-container flex-row">
+          <span class="info-title center">
+            <span class="center">Last Name:</span>
+          </span>
+          <span class="info-data center">
+            <span class="center">{{customer.lastName}}</span>
+          </span>
+        </div>
+        <div class="info-container flex-row">
+          <span class="info-title center">
+            <span class="center">User Email:</span>
+          </span>
+          <span class="info-data center">
+            <span class="center">{{customer.email}}</span>
+          </span>
+        </div>
+        <div class="info-container flex-row">
+          <span class="info-title center">
+            <span class="center">Phone Number:</span>
+          </span>
+          <span class="info-data center">
+            <span class="center">{{customer.phoneNumber}}</span>
+          </span>
+        </div>
+        <div class="info-container flex-row">
+          <span class="info-title center">
+            <span class="center">Company Name:</span>
+          </span>
+          <span class="info-data center">
+            <span class="center">{{customer.company}}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <span>{{customer.billingAddress.street}}</span>
+      <span>{{customer.billingAddress.city}}</span>
+      <span>{{customer.billingAddress.province}}</span>
+      <span>{{customer.billingAddress.country}}</span>
+    </div>
+    <div class="">
+      <p>{{customer.notes}}</p>
+    </div>
+  </div>
+
+  customer works!
+</div>

@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+body, html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column;
+  font-family: 'Roboto, "Helvetica Neue", sans-serif', monospace;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+
+}
+
+.main-container {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.center {
+  display: flex;
+  margin: auto;
+}

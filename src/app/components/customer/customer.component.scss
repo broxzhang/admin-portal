@@ -1,0 +1,31 @@
+.customer-profile-container {
+  background-color: #eeeeef;
+  margin-top: 5rem;
+  border: 1px solid;
+  box-shadow: 2px 2px #f6f6f6;
+}
+
+.customer-picture-container {
+  display: flex;
+  flex: 1;
+}
+.profile-picture {
+  display: flex;
+  margin: auto;
+  height: 4rem;
+  width: 4rem;
+}
+.customer-info-container {
+  flex: 2;
+}
+.info-container {
+  height: 2rem;
+}
+.info-title {
+  height: 2rem;
+  flex: 1;
+}
+.info-data {
+  height: 2rem;
+  flex: 1;
+}
