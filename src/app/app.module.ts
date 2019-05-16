@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CustomerComponent } from './components/customer/customer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NewCustomerComponent } from './components/new-customer/new-customer.com
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

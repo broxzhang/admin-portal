@@ -1,61 +1,104 @@
 <div class="main-container">
-  <div class="customer-profile-container flex-column">
-    <div class="flex-row">
-      <div class="customer-picture-container">
-        <img src="{{customer.picture}}" alt="picture" class="profile-picture"/>
+  <div class="customer-profile-container" fxLayout="column">
+    <div fxLayout="row">
+      <div fxFlex="30" fxLayoutAlign="center center">
+        <img src="{{customer.picture}}" alt="picture" class="profile-picture" />
       </div>
-      <div class="flex-column customer-info-container">
-        <div class="info-container flex-row">
-          <span class="info-title center">
-            <span class="center">First Name:</span>
+      <div fxLayout="column" fxFlex>
+        <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
+          <span class="info-title" fxFlex fxLayoutAlign="center center">
+            First Name:
           </span>
-          <span class="info-data center">
-            <span class="center">{{customer.firstName}}</span>
+          <span fxFlex="35">
+<!--            <span class="center">{{customer.firstName}}</span>-->
+            <input [(ngModel)]="firstName" value="{{customer.firstName}}" [disabled]="!editMode">
           </span>
         </div>
-        <div class="info-container flex-row">
-          <span class="info-title center">
+        <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
+          <span class="info-title" fxFlex fxLayoutAlign="center center">
             <span class="center">Last Name:</span>
           </span>
-          <span class="info-data center">
-            <span class="center">{{customer.lastName}}</span>
+          <span fxFlex="35">
+            <input [(ngModel)]="lastName" value="{{customer.lastName}}" [disabled]="!editMode">
           </span>
         </div>
-        <div class="info-container flex-row">
-          <span class="info-title center">
+        <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
+          <span class="info-title" fxFlex fxLayoutAlign="center center">
             <span class="center">User Email:</span>
           </span>
-          <span class="info-data center">
-            <span class="center">{{customer.email}}</span>
+          <span fxFlex="35">
+            <input [(ngModel)]="email" value="{{customer.email}}" [disabled]="!editMode">
           </span>
         </div>
-        <div class="info-container flex-row">
-          <span class="info-title center">
+        <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
+          <span class="info-title" fxFlex fxLayoutAlign="center center">
             <span class="center">Phone Number:</span>
           </span>
-          <span class="info-data center">
-            <span class="center">{{customer.phoneNumber}}</span>
+          <span fxFlex="35">
+            <input [(ngModel)]="phoneNumber" value="{{customer.phoneNumber}}" [disabled]="!editMode">
           </span>
         </div>
-        <div class="info-container flex-row">
-          <span class="info-title center">
+        <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
+          <span class="info-title" fxFlex fxLayoutAlign="center center">
             <span class="center">Company Name:</span>
           </span>
-          <span class="info-data center">
-            <span class="center">{{customer.company}}</span>
+          <span fxFlex="35">
+            <input [(ngModel)]="company" value="{{customer.company}}" [disabled]="!editMode">
           </span>
         </div>
       </div>
     </div>
-    <div class="flex-column">
-      <span>{{customer.billingAddress.street}}</span>
-      <span>{{customer.billingAddress.city}}</span>
-      <span>{{customer.billingAddress.province}}</span>
-      <span>{{customer.billingAddress.country}}</span>
+    <div class="hr"></div>
+    <div fxLayout="column" fxFlex>
+      <span fxLayoutAlign="center center">
+        <h4>Billing Information</h4>
+      </span>
+      <div fxLayout="row" class="info-container">
+        <span fxFlex fxLayoutAlign="center center" class="info-title">
+          Street No.
+        </span>
+        <span fxFlex="30" fxLayoutAlign="center center" class="info-title">
+                <input [(ngModel)]="street" value="{{customer.billingAddress.street}}" [disabled]="!editMode">
+        </span>
+      </div>
+      <div fxLayout="row" class="info-container">
+        <span fxFlex fxLayoutAlign="center center" class="info-title">
+          City
+        </span>
+        <span fxFlex="30" fxLayoutAlign="center center" class="info-title">
+      <input [(ngModel)]="city" value="{{customer.billingAddress.city}}" [disabled]="!editMode">
+        </span>
+      </div>
+      <div fxLayout="row" class="info-container">
+        <span fxFlex fxLayoutAlign="center center" class="info-title">
+          Province
+        </span>
+        <span fxFlex="30" fxLayoutAlign="center center" class="info-title">
+      <input [(ngModel)]="province" value="{{customer.billingAddress.province}}" [disabled]="!editMode">
+        </span>
+      </div>
+      <div fxLayout="row" class="info-container">
+        <span fxFlex fxLayoutAlign="center center" class="info-title">
+          Country
+        </span>
+        <span fxFlex="30" fxLayoutAlign="center center" class="info-title">
+      <input [(ngModel)]="country" value="{{customer.billingAddress.country}}" [disabled]="!editMode">
+        </span>
+      </div>
     </div>
-    <div class="">
-      <p>{{customer.notes}}</p>
+    <span class="hr"></span>
+    <span fxLayoutAlign="center center">
+        <h4>Customer Note</h4>
+      </span>
+    <div fxLayoutAlign="center center">
+      <textarea matInput [(ngModel)]="notes" value="{{customer.notes}}" [disabled]="!editMode" fxFlex="80"></textarea>
     </div>
+    <div class="button-group" fxLayout="row" fxLayoutAlign="end">
+      <button mat-raised-button color="warn" (click)="editModeOn()" [disabled]="editMode" class="customer-button">Edit</button>
+      <button mat-raised-button color="warn" (click)="saveCustomer()" [disabled]="!editMode" class="customer-button">Save</button>
+      <button mat-raised-button color="warn" (click)="deleteCustomer()" [disabled]="editMode" class="customer-button">Delete Customer</button>
+    </div>
+
   </div>
 
   customer works!

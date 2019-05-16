@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Customer} from '../models/customer';
 import {stringify} from 'querystring';
+import {post} from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,43 @@ export class CostumerService {
       'notes': newCustomer.notes
     };
     this.http.post(this.url, postBody, {headers: this.headers})
+      .subscribe(
+        (res) => {
+          return res;
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+  modifyCustomer(id: number, customer: Customer) {
+    const postBody = {
+      'picture': 'http://placehold.it/32x32',
+      'firstName': customer.firstName,
+      'lastName': customer.lastName,
+      'company' : customer.company,
+      'email': customer.email,
+      'phoneNumber': customer.phoneNumber,
+      'billingAddress': {
+        'street': customer.billingAddress.street,
+        'city': customer.billingAddress.city,
+        'province': customer.billingAddress.province,
+        'country': customer.billingAddress.country
+      },
+      'notes': customer.notes
+    };
+    const putUrl = this.url + '?id=' + String(id);
+    this.http.put(putUrl, postBody, {headers: this.headers})
+      .subscribe(
+        (res) => {
+          return res;
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+  deleteCustomer(id: number) {
+    const putUrl = this.url + '?id=' + String(id);
+    this.http.delete(putUrl, {headers: this.headers})
       .subscribe(
         (res) => {
           return res;

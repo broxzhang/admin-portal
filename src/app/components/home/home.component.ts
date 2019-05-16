@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {CostumerService} from 'src/app/services/costumer.service';
 import {Customer} from '../../models/customer';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
   searchId: number ;
   @ViewChild(MatSort) sort: MatSort;
   constructor(
-    private customerService: CostumerService
+    private customerService: CostumerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
   }
   getRecord(row) {
     console.log(row);
+    this.router.navigate(['customer'],{ queryParams: {id: row.id}});
   }
   searchCustomer() {
     console.log(this.searchId);

@@ -5,9 +5,9 @@
   box-shadow: 2px 2px #f6f6f6;
 }
 
-.customer-picture-container {
-  display: flex;
-  flex: 1;
+.hr {
+  border: 1px black solid;
+  margin: 1rem;
 }
 .profile-picture {
   display: flex;
@@ -19,13 +19,19 @@
   flex: 2;
 }
 .info-container {
-  height: 2rem;
+  height: 3rem;
 }
 .info-title {
   height: 2rem;
-  flex: 1;
 }
 .info-data {
   height: 2rem;
   flex: 1;
+}
+.button-group {
+  margin: 1rem;
+}
+
+.customer-button {
+  margin-left: 1rem;
 }

@@ -95,7 +95,6 @@
       "notes": "Et ut et proident exercitation officia nostrud irure duis tempor sunt esse ea. Consequat nulla ullamco non consectetur dolore cupidatat Lorem esse aute dolor duis id officia incididunt."
     },
     {
-      "id": 5,
       "picture": "http://placehold.it/32x32",
       "firstName": "Berg",
       "lastName": "Potts",
@@ -108,7 +107,8 @@
         "province": "New Jersey",
         "country": "Georgia"
       },
-      "notes": "Eu sit quis sit deserunt. Qui aliquip ut Lorem voluptate."
+      "notes": "Eu sit quis sit deserunt. Qui aliquip ut Lorem voluptate.",
+      "id": 5
     },
     {
       "id": 6,
