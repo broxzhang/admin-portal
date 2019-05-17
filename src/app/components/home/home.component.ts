@@ -3,6 +3,7 @@ import {CostumerService} from 'src/app/services/costumer.service';
 import {Customer} from '../../models/customer';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
+import {ServiceRequestService} from '../../services/service-request.service';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   constructor(
     private customerService: CostumerService,
+    private requestService: ServiceRequestService,
     private router: Router
   ) { }
 
@@ -27,9 +29,12 @@ export class HomeComponent implements OnInit {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.sort = this.sort;
         console.log(this.dataSource);
-      }
+      });
+      this.requestService.getCustomerServiceByCustomer(5).subscribe(
+        data => {
+          console.log(data);
+        }
     );
-
   }
   getRecord(row) {
     console.log(row);
@@ -42,7 +47,6 @@ export class HomeComponent implements OnInit {
         let c: Customer[] = [];
         c.push(data);
         this.dataSource = new MatTableDataSource(c);
-        console.log(this.dataSource);
       }
     );
   }

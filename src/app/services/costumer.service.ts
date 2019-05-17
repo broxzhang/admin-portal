@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {filter, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Customer} from '../models/customer';
-import {stringify} from 'querystring';
-import {post} from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
@@ -35,20 +33,14 @@ export class CostumerService {
     return res;
   }
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.url).pipe(map((res: any) => {
-      // console.log(res);
-      return res;
-    }));
+    return this.http.get<Customer[]>(this.url);
   }
   checkId(id: number): boolean {
     return this.getCustomerById(id) !== null;
   }
   getCustomerById(id: number): Observable<Customer> {
-    return this.http.get<Customer[]>(this.url).pipe(map((res: any) => {
-      // console.log(res);
-      console.log(res[id]);
-      return res[id];
-    }));
+    const putUrl = this.url + '/' + String(id);
+    return this.http.get<Customer>(putUrl);
   }
   addNewCustomer(newCustomer: Customer) {
     const postBody = {
@@ -91,7 +83,7 @@ export class CostumerService {
       },
       'notes': customer.notes
     };
-    const putUrl = this.url + '?id=' + String(id);
+    const putUrl = this.url + '/' + String(id);
     this.http.put(putUrl, postBody, {headers: this.headers})
       .subscribe(
         (res) => {
@@ -102,7 +94,7 @@ export class CostumerService {
         });
   }
   deleteCustomer(id: number) {
-    const putUrl = this.url + '?id=' + String(id);
+    const putUrl = this.url + '/' + String(id);
     this.http.delete(putUrl, {headers: this.headers})
       .subscribe(
         (res) => {

@@ -1,5 +1,5 @@
 <div class="main-container">
-  <form [formGroup]="addNewForm" (ngSubmit)="addNew()" class="flex-column">
+  <form [formGroup]="addNewForm" (ngSubmit)="addNew()" fxLayout="column">
     <mat-form-field>
       <input matInput placeholder="First Name" [formControl]="firstName" required="required">
     </mat-form-field>
@@ -29,8 +29,5 @@
     </mat-form-field>
     <button mat-raised-button>Save New Customer</button>
   </form>
-  <p>
-    new-customer works!
-  </p>
 </div>
 

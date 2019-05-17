@@ -19,17 +19,3 @@ body, html {
   max-width: 1024px;
   margin: auto;
 }
-
-.flex-row {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.flex-column {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.center {
-  display: flex;
-  margin: auto;
-}

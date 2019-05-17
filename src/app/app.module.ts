@@ -3,14 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { LandingComponent } from './components/landing/landing.component';
 import {RouterModule} from '@angular/router';
 import {routing} from './app.routing';
 import {
-  MatButtonModule,
+  MatButtonModule, MatDatepickerModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, MatNativeDateModule, MatSelectModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
@@ -26,7 +25,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
   declarations: [
     AppComponent,
     HomeComponent,
-    LandingComponent,
     CustomerComponent,
     NewCustomerComponent
   ],
@@ -46,7 +44,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,15 +9,7 @@
   border: 1px black solid;
   margin: 1rem;
 }
-.profile-picture {
-  display: flex;
-  margin: auto;
-  height: 4rem;
-  width: 4rem;
-}
-.customer-info-container {
-  flex: 2;
-}
+
 .info-container {
   height: 3rem;
 }
@@ -34,4 +26,7 @@
 
 .customer-button {
   margin-left: 1rem;
+}
+.add-request-container {
+  max-width: 60%;
 }

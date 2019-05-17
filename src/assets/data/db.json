@@ -11,11 +11,59 @@
         "province": "Pyrénées-Orientales",
         "country": "France"
       }
+    },
+    {
+      "id": 1,
+      "date": "Sat Aug 02 1986 22:18:00 GMT+0000 (UTC)",
+      "serviceType": "CAR_UNLOCKING",
+      "customerId": 5,
+      "location": {
+        "street": "123 rue du Parisien",
+        "city": "Domain-de-la-Lavande",
+        "province": "Pyrénées-Orientales",
+        "country": "France"
+      }
+    },
+    {
+      "id": 2,
+      "date": "Sat Aug 02 1986 22:18:00 GMT+0000 (UTC)",
+      "serviceType": "CAR_UNLOCKING",
+      "customerId": 5,
+      "location": {
+        "street": "123 rue du Parisien",
+        "city": "Domain-de-la-Lavande",
+        "province": "Pyrénées-Orientales",
+        "country": "France"
+      }
+    },
+    {
+      "id": 3,
+      "date": "Sat Aug 02 1986 22:18:00 GMT+0000 (UTC)",
+      "serviceType": "CAR_UNLOCKING",
+      "customerId": 5,
+      "location": {
+        "street": "123 rue du Parisien",
+        "city": "Domain-de-la-Lavande",
+        "province": "Pyrénées-Orientales",
+        "country": "France"
+      }
+    },
+    {
+      "date": "Tue, 14 May 2019 04:00:00 GMT",
+      "serviceType": "mercedes",
+      "customerId": 5,
+      "location": {
+        "street": "398 Ouimet, Apt 116",
+        "city": "Montreal",
+        "province": "Canada",
+        "country": "C"
+      },
+      "id": 4
     }
   ],
   "customers": [
     {
-      "id": 0,
+      "id": 4,
       "picture": "http://placehold.it/32x32",
       "firstName": "Mary",
       "lastName": "Boone",

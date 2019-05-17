@@ -16,7 +16,7 @@
         </div>
         <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
           <span class="info-title" fxFlex fxLayoutAlign="center center">
-            <span class="center">Last Name:</span>
+            <span fxLayoutAlign="center center">Last Name:</span>
           </span>
           <span fxFlex="35">
             <input [(ngModel)]="lastName" value="{{customer.lastName}}" [disabled]="!editMode">
@@ -24,7 +24,7 @@
         </div>
         <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
           <span class="info-title" fxFlex fxLayoutAlign="center center">
-            <span class="center">User Email:</span>
+            <span fxLayoutAlign="center center">User Email:</span>
           </span>
           <span fxFlex="35">
             <input [(ngModel)]="email" value="{{customer.email}}" [disabled]="!editMode">
@@ -32,7 +32,7 @@
         </div>
         <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
           <span class="info-title" fxFlex fxLayoutAlign="center center">
-            <span class="center">Phone Number:</span>
+            <span fxLayoutAlign="center center">Phone Number:</span>
           </span>
           <span fxFlex="35">
             <input [(ngModel)]="phoneNumber" value="{{customer.phoneNumber}}" [disabled]="!editMode">
@@ -40,7 +40,7 @@
         </div>
         <div class="info-container" fxLayout="row"  fxLayoutAlign="center center">
           <span class="info-title" fxFlex fxLayoutAlign="center center">
-            <span class="center">Company Name:</span>
+            <span fxLayoutAlign="center center">Company Name:</span>
           </span>
           <span fxFlex="35">
             <input [(ngModel)]="company" value="{{customer.company}}" [disabled]="!editMode">
@@ -102,4 +102,79 @@
   </div>
 
   customer works!
+  <div class="hr"></div>
+  <div class="services-container" fxLayout="column" fxLayoutAlign="center">
+    <span fxLayoutAlign="start" class="info-container">
+      <h4 >Service Requests <i class="fas fa-arrow-right"></i></h4>
+    </span>
+    <div *ngIf="hasRequests">
+      <div class="request-container" fxLayout="row" fxLayoutAlign="center center" *ngFor="let req of userRequests" >
+        <div fxFlex="80">
+          <div fxLayout="row">
+            <span fxFlex="30">Date:</span>
+            <span fxFlex="70">{{req.data}}</span>
+          </div>
+          <div fxLayout="row">
+            <span fxFlex="30">Service Type:</span>
+            <span fxFlex>{{req.serviceType}}</span>
+          </div>
+          <div fxLayout="row">
+            <span fxFlex="30">Street No:</span>
+            <span fxFlex>{{req.location.street}}</span>
+          </div>
+          <div fxLayout="row">
+            <span fxFlex="30">City:</span>
+            <span fxFlex>{{req.location.city}}</span>
+          </div>
+          <div fxLayout="row">
+            <span fxFlex="30">Province:</span>
+            <span fxFlex>{{req.location.province}}</span>
+          </div>
+          <div fxLayout="row">
+            <span fxFlex="30">Country:</span>
+            <span fxFlex>{{req.location.country}}</span>
+          </div>
+          <div class="hr"></div>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end" class="info-container">
+      <button mat-raised-button color="warn" fxFlex="20" (click)="openAdd()">Request a Service</button>
+    </div>
+    <div fxLayoutAlign="center center" *ngIf="openAddRequest">
+      <div class="add-request-container" fxLayout="column">
+        <form [formGroup]="addNewRequestForm" (ngSubmit)="addNewRequest()" fxLayout="column">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="serviceDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Select Service Type" [formControl]="serviceType">
+              <mat-option value="volvo">PROFESSIONAL_BOOST</mat-option>
+              <mat-option value="saab">CAR_UNLOCKING</mat-option>
+              <mat-option value="mercedes">TOW</mat-option>
+              <mat-option value="audi">GAS_DELIVERY</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Street No." [formControl]="locationStreet" required="required">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="City" [formControl]="locationCity" required="required">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Province" [formControl]="locationProvince" required="required">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Country" [formControl]="locationCountry" required="required">
+          </mat-form-field>
+          <div fxLayoutAlign="end">
+            <button mat-raised-button color="accent">Request Service</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="hr"></div>
+  </div>
 </div>
